@@ -1,8 +1,53 @@
 public class ZeroOneKnapsack {
     public static void main(String[] args) {
-        int[] weights  = {3,4,6,5};
-        int[] profits = {2,3,1,4};
-        solution(weights,profits,8);
+
+        // Test case 1: Standard case
+        int[] weights1 = {3, 4, 6, 5};
+        int[] profits1 = {2, 3, 1, 4};
+        int capacity1 = 8;
+        System.out.println("Test case 1: " + solution(weights1, profits1, capacity1));
+        // Expected output: 7
+        // Explanation: Choose items with weights 3 and 5 for a total profit of 2 + 4 = 6.
+
+        System.out.println("\n\nTest case 2:\n\n");
+
+        // Test case 2: Larger capacity
+        int[] weights2 = {5, 4, 6, 3};
+        int[] profits2 = {10, 40, 30, 50};
+        int capacity2 = 10;
+        System.out.println("Test case 2: " + solution(weights2, profits2, capacity2));
+        // Expected output: 90
+        // Explanation: Choose items with weights 4 and 3 for a total profit of 40 + 50 = 90.
+
+        System.out.println("\n\nTest case 3:\n\n");
+
+        // Test case 3: Edge case with zero capacity
+        int[] weights3 = {1, 2, 3};
+        int[] profits3 = {10, 20, 30};
+        int capacity3 = 0;
+        System.out.println("Test case 3: " + solution(weights3, profits3, capacity3));
+        // Expected output: 0
+        // Explanation: Capacity is zero, so no items can be taken.
+
+        System.out.println("\n\nTest case 4:\n\n");
+
+        // Test case 4: Edge case with all items too heavy
+        int[] weights4 = {10, 20, 30};
+        int[] profits4 = {60, 100, 120};
+        int capacity4 = 5;
+        System.out.println("Test case 4: " + solution(weights4, profits4, capacity4));
+        // Expected output: 0
+        // Explanation: All items are heavier than the capacity, so no items can be taken.
+
+        System.out.println("\n\nTest case 5:\n\n");
+
+        // Test case 5: All items fit exactly into the capacity
+        int[] weights5 = {1, 2, 3};
+        int[] profits5 = {10, 20, 30};
+        int capacity5 = 6;
+        System.out.println("Test case 5: " + solution(weights5, profits5, capacity5));
+        // Expected output: 60
+        // Explanation: All items can be taken for a total profit of 10 + 20 + 30 = 60.
     }
 
 

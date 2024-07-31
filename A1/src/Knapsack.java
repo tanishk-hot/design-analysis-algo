@@ -2,27 +2,73 @@ public class Knapsack{
 // Add edge case handlig, adding fracional.
 
     public static void main(String[] args) {
-        //GFG testcases
-        //Passed
-        int[] value = new int[] {60,100};
-        int[] weight = new int[] {10,20};
-        Item[] arr1 = new Item[value.length];
-        ///function to put values and weight in the array of Items
-        for(int i = 0; i < value.length; i++){
-            arr1[i] = new Item(i , weight[i] , value[i]);
+        // Test case 1: Standard case
+        int[] value1 = new int[] {60, 100, 120};
+        int[] weight1 = new int[] {10, 20, 30};
+        Item[] items1 = new Item[value1.length];
+        for (int i = 0; i < value1.length; i++) {
+            items1[i] = new Item(i, weight1[i], value1[i]);
         }
+        int capacity1 = 50;
+        System.out.println("Test case 1 result: " + solution(capacity1, items1));
+        // Expected output: 240.0
+        // Explanation: Take all items (10 + 20 + 30 = 60) and fraction of the third item.
 
-        int[] value2 = new int[] {60,100};
-        int[] weight2 = new int[] {10,20};
-        Item[] arr2 = new Item[value.length];
+        System.out.println("\n\nTest case 2:\n\n");
 
-        ///function to put values and weight in the array of Items
-        for(int i = 0; i < value2.length; i++){
-            arr2[i] = new Item(i , weight2[i] , value2[i]);
+        // Test case 2: Capacity is smaller than any item's weight
+        int[] value2 = new int[] {100, 200, 300};
+        int[] weight2 = new int[] {50, 60, 70};
+        Item[] items2 = new Item[value2.length];
+        for (int i = 0; i < value2.length; i++) {
+            items2[i] = new Item(i, weight2[i], value2[i]);
         }
+        int capacity2 = 40;
+        System.out.println("Test case 2 result: " + solution(capacity2, items2));
+        // Expected output: 0.0
+        // Explanation: Capacity is less than the weight of any item.
 
+        System.out.println("\n\nTest case 3:\n\n");
 
-        System.out.println(solution(50, arr1));
+        // Test case 3: Capacity is zero
+        int[] value3 = new int[] {10, 20, 30};
+        int[] weight3 = new int[] {1, 2, 3};
+        Item[] items3 = new Item[value3.length];
+        for (int i = 0; i < value3.length; i++) {
+            items3[i] = new Item(i, weight3[i], value3[i]);
+        }
+        int capacity3 = 0;
+        System.out.println("Test case 3 result: " + solution(capacity3, items3));
+        // Expected output: 0.0
+        // Explanation: Capacity is zero, so no items can be taken.
+
+        System.out.println("\n\nTest case 4:\n\n");
+
+        // Test case 4: All items fit exactly into the capacity
+        int[] value4 = new int[] {60, 100, 120};
+        int[] weight4 = new int[] {10, 20, 30};
+        Item[] items4 = new Item[value4.length];
+        for (int i = 0; i < value4.length; i++) {
+            items4[i] = new Item(i, weight4[i], value4[i]);
+        }
+        int capacity4 = 60;
+        System.out.println("Test case 4 result: " + solution(capacity4, items4));
+        // Expected output: 180.0
+        // Explanation: Take all items with total weight 10 + 20 + 30 = 60 and total profit 60 + 100 + 120 = 180.
+
+        System.out.println("\n\nTest case 5:\n\n");
+
+        // Test case 5: Items with identical weights but different values
+        int[] value5 = new int[] {60, 100, 120};
+        int[] weight5 = new int[] {10, 10, 10};
+        Item[] items5 = new Item[value5.length];
+        for (int i = 0; i < value5.length; i++) {
+            items5[i] = new Item(i, weight5[i], value5[i]);
+        }
+        int capacity5 = 15;
+        System.out.println("Test case 5 result: " + solution(capacity5, items5));
+        // Expected output: 180.0
+        // Explanation: Take all items (full capacity 15) with total profit of 60 + 100 + 120 = 180.
     }
 
     static int solution(int capacity, Item[] arr){
