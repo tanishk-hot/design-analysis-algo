@@ -6,7 +6,7 @@ public class ZeroOneKnapsack {
         int[] profits1 = {2, 3, 1, 4};
         int capacity1 = 8;
         System.out.println("Test case 1: " + solution(weights1, profits1, capacity1));
-        // Expected output: 7
+        // Expected output: 6
         // Explanation: Choose items with weights 3 and 5 for a total profit of 2 + 4 = 6.
 
         System.out.println("\n\nTest case 2:\n\n");

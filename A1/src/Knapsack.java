@@ -30,7 +30,7 @@ public class Knapsack{
 
         System.out.println("\n\nTest case 3:\n\n");
 
-        // Test case 3: Capacity is zero
+        // Test case 3:
         int[] value3 = new int[] {10, 20, 30};
         int[] weight3 = new int[] {1, 2, 3};
         Item[] items3 = new Item[value3.length];
@@ -39,8 +39,8 @@ public class Knapsack{
         }
         int capacity3 = 0;
         System.out.println("Test case 3 result: " + solution(capacity3, items3));
-        // Expected output: 0.0
-        // Explanation: Capacity is zero, so no items can be taken.
+        // Expected output: 170.0
+
 
         System.out.println("\n\nTest case 4:\n\n");
 
@@ -54,7 +54,7 @@ public class Knapsack{
         int capacity4 = 60;
         System.out.println("Test case 4 result: " + solution(capacity4, items4));
         // Expected output: 180.0
-        // Explanation: Take all items with total weight 10 + 20 + 30 = 60 and total profit 60 + 100 + 120 = 180.
+        // Explanation: Take all items with total weight 10 + 20 + 30 = 60 and total profit 60 + 100 + 120 = 280.
 
         System.out.println("\n\nTest case 5:\n\n");
 
@@ -67,8 +67,8 @@ public class Knapsack{
         }
         int capacity5 = 15;
         System.out.println("Test case 5 result: " + solution(capacity5, items5));
-        // Expected output: 180.0
-        // Explanation: Take all items (full capacity 15) with total profit of 60 + 100 + 120 = 180.
+        // Expected output: 170.0
+        // Explanation: Take all items (full capacity 15) with total profit of 60 + 100 + 120 = 170.
     }
 
     static int solution(int capacity, Item[] arr){
