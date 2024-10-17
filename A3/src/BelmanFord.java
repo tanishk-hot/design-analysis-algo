@@ -10,7 +10,7 @@ public class BelmanFord {
     }
 
 
-    static ArrayList<Cost> input (){
+    public static ArrayList<Cost> input (){
         ArrayList<Cost> edges = new ArrayList<>();
 
         edges.add(new Cost('A', 'B', 6));
@@ -26,7 +26,7 @@ public class BelmanFord {
         return edges;
     }
 
-    static ArrayList<Cost> input2 (){
+    public static ArrayList<Cost> input2 (){
         ArrayList<Cost> edges = new ArrayList<>();
 
         edges.add(new Cost('A', 'B', 6));
@@ -87,4 +87,18 @@ public class BelmanFord {
         }
     }
 }
+
+
+/*
+Output:
+
+Vertex Distance from Source
+A		0
+B		1
+C		3
+D		5
+E		0
+F		3
+
+ */
 

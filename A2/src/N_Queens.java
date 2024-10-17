@@ -42,3 +42,19 @@ public class N_Queens {
     }
 
 }
+
+
+/*
+Output:
+
+. Q . .
+. . . Q
+Q . . .
+. . Q .
+
+. . Q .
+Q . . .
+. . . Q
+. Q . .
+
+* */
